@@ -1,0 +1,47 @@
+[package]
+name = "from-attr"
+description = "A crate that makes it easy to parse attributes."
+keywords = ["attributes", "derive", "macro"]
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+include.workspace = true
+readme.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+from-attr-core = { workspace = true }
+from-attr-macro = { workspace = true }
+proc-macro2 = { workspace = true }
+syn = { workspace = true, features = ["derive", "parsing", "printing"] }
+
+[dev-dependencies]
+quote = { workspace = true }
+syn = { workspace = true, features = [
+    "derive",
+    "parsing",
+    "printing",
+    "full",
+    "extra-traits",
+] }
+
+[features]
+syn-full = ["syn/full"]
+
+[lints.rust]
+unsafe_code = "forbid"
+private_interfaces = "deny"
+private_bounds = "deny"
+unreachable_pub = "deny"
+missing_docs = "warn"
+
+[lints.rustdoc]
+broken_intra_doc_links = "warn"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

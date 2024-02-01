@@ -1,0 +1,17 @@
+[package]
+name = "from-attr-core"
+description = "from-attr core type"
+keywords = ["attributes", "derive", "macro"]
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+include.workspace = true
+readme.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+syn = { workspace = true, features = ["parsing"] }

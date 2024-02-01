@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = ["from-attr", "from-attr-core", "from-attr-macro", "examples/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["zihan <ZihanType@proton.me>"]
+license = "MIT/Apache-2.0"
+homepage = "https://github.com/ZihanType/from-attr"
+repository = "https://github.com/ZihanType/from-attr"
+include = ["src/**/*", "Cargo.toml"]
+readme = "README.md"
+
+[workspace.dependencies]
+# self
+from-attr = { version = "0.1.0", path = "./from-attr", default-features = false }
+from-attr-core = { version = "0.1.0", path = "./from-attr-core", default-features = false }
+from-attr-macro = { version = "0.1.0", path = "./from-attr-macro", default-features = false }
+
+# dependencies
+proc-macro2 = { version = "1", default-features = false }
+quote = { version = "1", default-features = false }
+quote-use = { version = "0.8", default-features = false }
+syn = { version = "2", default-features = false }
