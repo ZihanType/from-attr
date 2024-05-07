@@ -3,7 +3,7 @@ resolver = "2"
 members = ["from-attr", "from-attr-core", "from-attr-macro", "examples/*"]
 
 [workspace.package]
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["zihan <ZihanType@proton.me>"]
 license = "MIT/Apache-2.0"
@@ -14,9 +14,9 @@ readme = "README.md"
 
 [workspace.dependencies]
 # self
-from-attr = { version = "0.1.0", path = "./from-attr", default-features = false }
-from-attr-core = { version = "0.1.0", path = "./from-attr-core", default-features = false }
-from-attr-macro = { version = "0.1.0", path = "./from-attr-macro", default-features = false }
+from-attr = { version = "0.1.1", path = "./from-attr", default-features = false }
+from-attr-core = { version = "0.1.1", path = "./from-attr-core", default-features = false }
+from-attr-macro = { version = "0.1.1", path = "./from-attr-macro", default-features = false }
 
 # dependencies
 proc-macro2 = { version = "1", default-features = false }
