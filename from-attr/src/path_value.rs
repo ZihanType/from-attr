@@ -2,7 +2,7 @@ use proc_macro2::Span;
 
 use crate::ConvertParsed;
 
-/// Represents the path-value pairs parsed from the [`meta`](syn::meta::ParseNestedMeta).
+/// Represents the path-value pair parsed from the [`meta`](syn::meta::ParseNestedMeta).
 pub struct PathValue<T> {
     /// The path of the meta.
     pub path: Span,

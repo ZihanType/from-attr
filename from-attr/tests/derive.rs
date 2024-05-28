@@ -1,4 +1,4 @@
-use from_attr::{convert_parsed_from_meta_list, FlagOrValue, FromAttr};
+use from_attr::{convert_parsed_from_meta_list, FlagOrValue, FromAttr, Map};
 use from_attr_macro::FromIdent;
 use quote::quote;
 use syn::{parse_quote, Expr, LitStr, Type};
@@ -214,5 +214,23 @@ fn r#enum() {
     assert_eq!(
         Test::from_attributes(&attrs).unwrap().unwrap().value,
         Test { a: Enum::A }
+    );
+}
+
+#[test]
+fn map() {
+    #[derive(FromAttr, PartialEq, Eq, Debug)]
+    #[attribute(idents = [test])]
+    struct Test {
+        a: Map<i32, String>,
+    }
+
+    let attrs = [parse_quote!(#[test(a = { 1 : "hi", 2 : "ho" })])];
+
+    assert_eq!(
+        Test::from_attributes(&attrs).unwrap().unwrap().value,
+        Test {
+            a: Map(vec![(1, "hi".to_string()), (2, "ho".to_string())])
+        }
     );
 }
